@@ -8,7 +8,7 @@ export class PostsService {
   constructor(
     @InjectRepository(Post) private postRepository: Repository<Post>,
   ) {}
-  findAll(): Promise<Post[]> {
+  async findAll(): Promise<Post[]> {
     return this.postRepository.find();
   }
 }

@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { PostsService } from './posts/posts.service';
 import { PostsModule } from './posts/posts.module';
 import { GraphQLModule } from '@nestjs/graphql';
@@ -27,7 +25,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     UsersModule,
     ProductsModule,
   ],
-  controllers: [AppController],
-  providers: [AppService, PostsService],
+  controllers: [],
+  providers: [PostsService],
 })
 export class AppModule {}
