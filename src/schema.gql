@@ -2,14 +2,22 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type User {
+  id: ID!
+  name: String!
+  posts: [Post!]!
+}
+
 type Post {
   id: ID!
   title: String!
   content: String
+  user: User!
 }
 
 type Query {
   posts: [Post!]!
+  getPost(id: ID!): Post!
 }
 
 type Mutation {
@@ -18,5 +26,5 @@ type Mutation {
 
 input CreatePostInput {
   title: String!
-  content: String!
+  content: String
 }

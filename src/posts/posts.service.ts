@@ -17,4 +17,13 @@ export class PostsService {
     await this.postRepository.save(newPost);
     return newPost;
   }
+
+  async findOne(id: string): Promise<Post> {
+    const product = await this.postRepository.findOne({
+      where: {
+        id,
+      },
+    });
+    return product;
+  }
 }
