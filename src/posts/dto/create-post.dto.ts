@@ -14,4 +14,8 @@ export class CreatePostInput {
   @IsOptional()
   @Field({ nullable: true })
   content?: string;
+  @Field()
+  @IsString()
+  @IsNotEmpty()
+  userId: string;
 }
